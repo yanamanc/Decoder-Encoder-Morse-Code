@@ -1,0 +1,37 @@
+<body>
+<div class="left">
+<div class="text">
+<h1>Декодер азбуки Морзе</h1>
+
+<%= form_for :calculator, url: { action: :new }, method: :get do |f|   %>
+  <p>Ваш шифр</p>
+  <%= text_area_tag :a, params[:a], rows: 7 %>
+<br>
+  <%= f.submit 'Decode!', style:"display:block; margin:auto; margin-top:40px;" %>
+<% end %>
+<div class="result">
+<% unless @result.nil? %>
+  <p> = <%= @result %> </p>
+<% end %>
+</div>
+</div>
+</div>
+
+
+<div class="right">
+<div class="text">
+<h1>Кодировщик Азбуки Морзе</h1>
+<%= form_for :calculator, url: { action: :new2 }, method: :get do |f|   %>
+  <p>Ваш текст</p>
+  <%= text_area_tag :b, params[:b], rows: 7 %>
+<br>
+  <%= f.submit 'Code!', style:"display:block; margin:auto; margin-top:40px;" %>
+<% end %>
+<div class="result">
+<% unless @result2.nil? %>
+  <p> = <%= @result2 %> </p>
+<% end %>
+</div>
+</div>
+</div>
+</body>
